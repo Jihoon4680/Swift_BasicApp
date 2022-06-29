@@ -19,7 +19,8 @@ class MainViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 70)
         return label
     }()
-    // 데이터타입으로의 함수인가.... { } 이게 왜나오지...??
+    // 데이터타입으로의 함수인가.... = { } 이게 왜나오지...??
+    // 함수를 사용한 클로저
     let animationView : AnimationView = {
         //애니메이션설정
         let animView = AnimationView(name: "12358-christmas-loading")
@@ -38,10 +39,8 @@ class MainViewController: UIViewController {
         // view의 자식뷰로 animationView 설정
         view.addSubview(animationView)
         animationView.center = view.center // 중앙 정렬
-        
  
-        
-        //애니메이션 실행 ( 클로저 공부해야됨 왜 다 self쓰는지 )
+        //애니메이션 실행 closer안에서는 self.를 사용해줘야됨 ( MARK 참고 )
         animationView.play{ (finish) in
             //끝나게되면
             print("애니메이션이 끝났다.")
@@ -58,6 +57,19 @@ class MainViewController: UIViewController {
             
         }
     }
-
 }
+
+// MARK: - 함수를 사용한 프로퍼티 기본 값 : = { }
+// 변수나 상수의 타입과 함수의 반환타입이 같아야함.
+// let animationView : AnimationView = {
+//    //애니메이션설정
+//    let animView = AnimationView(name: "12358-christmas-loading")
+//    //사각형 0,0에서부터 크기 400x400짜리 애니메이션설정
+//    animView.frame = CGRect(x:0,y:0,width: 400,height: 400)
+//    //animationView의 사이즈를 꽉차게 설정
+//    animView.contentMode = .scaleAspectFill
+//    return animView
+//}()
+
+// MARK: - 클로저에서 self를 사용하는 이유\
 

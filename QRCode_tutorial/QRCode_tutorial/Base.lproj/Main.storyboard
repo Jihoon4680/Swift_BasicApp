@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="QRCode_tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAI-yL-NDn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKO-U3-OVy">
+                                <rect key="frame" x="107" y="682" width="200" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="9m2-mr-sDP"/>
+                                    <constraint firstAttribute="width" constant="200" id="Lvg-AI-q5h"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="QR코드 인식">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="31"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnScanQR:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9If-Yv-ba5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wAI-yL-NDn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7no-ub-l4G"/>
+                            <constraint firstItem="wAI-yL-NDn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DqW-2y-4tK"/>
+                            <constraint firstItem="wAI-yL-NDn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ppi-7U-QTf"/>
+                            <constraint firstItem="wAI-yL-NDn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aoW-Qr-XWx"/>
+                            <constraint firstItem="lKO-U3-OVy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ogE-9F-pmn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lKO-U3-OVy" secondAttribute="bottom" constant="100" id="yKw-eP-4TP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnQRCode" destination="lKO-U3-OVy" id="Q4S-BP-RQk"/>
+                        <outlet property="webView" destination="wAI-yL-NDn" id="OrI-yK-Dmv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
