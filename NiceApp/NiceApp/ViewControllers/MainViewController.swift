@@ -71,5 +71,4 @@ class MainViewController: UIViewController {
 //    return animView
 //}()
 
-// MARK: - 클로저에서 self를 사용하는 이유\
 
